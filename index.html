@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background-color: #f0f2f5;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
+      color: #f8f9fa;
     }
 
     .container {
@@ -25,19 +25,38 @@
       margin: 20px auto;
     }
 
+    .hero {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
     .card-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 1.5rem;
       padding-top: 2rem;
     }
 
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       padding: 20px;
       transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .card:hover {
@@ -55,11 +74,12 @@
       font-size: 1.2rem;
       font-weight: 600;
       margin-bottom: 1rem;
-      color: #333;
+      color: #ffffff;
     }
 
     .btn-group {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
     }
@@ -71,24 +91,35 @@
       cursor: pointer;
       font-weight: 600;
       transition: background 0.3s;
+      min-width: 80px;
     }
 
     .btn-ios {
-      background-color: #007aff;
+      background-color: rgba(10, 132, 255, 0.8);
       color: white;
     }
 
     .btn-ios:hover {
-      background-color: #005ecb;
+      background-color: rgba(10, 132, 255, 1);
     }
 
     .btn-android {
-      background-color: #3ddc84;
+      background-color: rgba(48, 209, 88, 0.8);
       color: white;
     }
 
     .btn-android:hover {
-      background-color: #31ba6f;
+      background-color: rgba(48, 209, 88, 1);
+    }
+
+    @media (max-width: 480px) {
+      .card-img {
+        width: 60px;
+        height: 60px;
+      }
+      .card-text {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -96,45 +127,43 @@
   <div class="container">
     <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/StagecoachGroup.svg/1024px-StagecoachGroup.svg.png?20210621112031" alt="scg-logo">
 
-    <div class="card-container">
+    <div class="hero">
+      <p>Welcome to the Stagecoach team, we are excited to have you on board! Here is a list of the apps we recommend installing on your device. These apps are commonly used here for communication, viewing your schedule, accessing payslips, and accessing our employee benefits platform!</p>
+    </div>
 
-      <!-- Card Template -->
+    <div class="card-container">
       <div class="card">
         <img src="https://play-lh.googleusercontent.com/nVQ-RChbbqQKxV4O-9j2ZRogew66dk_4Qyn3JD5zuGeqZTweFRlLV2XlV9Hr-jQz8SI=w480-h960-rw" class="card-img" alt="GreenRoad App">
-        <p class="card-text">GreenRoad App</p>
+        <div class="card-text">GreenRoad App</div>
         <div class="btn-group">
-          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/greenroad-app/id123456789')">iOS</button>
-          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.greenroad.app')">Android</button>
+          <button class="btn btn-ios" onclick="window.open('https://apps.apple.com/us/app/greenroad-app/id123456789')">iOS</button>
+          <button class="btn btn-android" onclick="window.open('https://play.google.com/store/apps/details?id=com.greenroad.app')">Android</button>
         </div>
       </div>
-
       <div class="card">
         <img src="https://play-lh.googleusercontent.com/jKU1-Hcun30vb2D1Ok41yKMQ_Ex7MeDN2fxEP7eNC8S2P5mxSDPZ3Y648JZigHLor0M=s188-rw" class="card-img" alt="Blink">
-        <p class="card-text">Blink</p>
+        <div class="card-text">Blink</div>
         <div class="btn-group">
-          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/blink/id987654321')">iOS</button>
-          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.blink.app')">Android</button>
+          <button class="btn btn-ios" onclick="window.open('https://apps.apple.com/us/app/blink/id987654321')">iOS</button>
+          <button class="btn btn-android" onclick="window.open('https://play.google.com/store/apps/details?id=com.blink.app')">Android</button>
         </div>
       </div>
-
       <div class="card">
         <img src="https://cdn.prod.website-files.com/64e65201e4305640a548a803/65034223403017d618435fb3_Das-web.webp" class="card-img" alt="DasWeb">
-        <p class="card-text">DasWeb</p>
+        <div class="card-text">DasWeb</div>
         <div class="btn-group">
-          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/dasweb/id654321987')">iOS</button>
-          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.dasweb.app')">Android</button>
+          <button class="btn btn-ios" onclick="window.open('https://apps.apple.com/us/app/dasweb/id654321987')">iOS</button>
+          <button class="btn btn-android" onclick="window.open('https://play.google.com/store/apps/details?id=com.dasweb.app')">Android</button>
         </div>
       </div>
-
       <div class="card">
         <img src="https://play-lh.googleusercontent.com/YM9jT_ETnF1btReCKMYUwpFXBatqPKqifwehlX9_GvfEx5K7X-DANT9CBbaSQeMuxQ=w480-h960-rw" class="card-img" alt="Workday">
-        <p class="card-text">Workday</p>
+        <div class="card-text">Workday</div>
         <div class="btn-group">
-          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/workday/id111222333')">iOS</button>
-          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.workday.app')">Android</button>
+          <button class="btn btn-ios" onclick="window.open('https://apps.apple.com/us/app/workday/id111222333')">iOS</button>
+          <button class="btn btn-android" onclick="window.open('https://play.google.com/store/apps/details?id=com.workday.app')">Android</button>
         </div>
       </div>
-
       <div class="card">
         <img src="https://play-lh.googleusercontent.com/Yt8jGBHPyBBPkqek3JkCHH02qlkTyOHwQJ9NtBLvDExHWMQW9r9JQvXSx6zDYRehdmz3=w480-h960-rw" class="card-img" alt="Hapi">
         <p class="card-text">Hapi</p>
@@ -143,23 +172,7 @@
           <button class="btn btn-android" onclick="alert('Coming soon on Android')">Android</button>
         </div>
       </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/100" class="card-img" alt="Coming Soon">
-        <p class="card-text">Coming Soon!</p>
-        <div class="btn-group">
-          <button class="btn btn-ios" onclick="alert('Feature coming soon!')">iOS</button>
-          <button class="btn btn-android" onclick="alert('Feature coming soon!')">Android</button>
-        </div>
-      </div>
-
     </div>
   </div>
-
-  <script>
-    function redirectTo(url) {
-      window.location.href = url;
-    }
-  </script>
 </body>
 </html>
