@@ -1,0 +1,105 @@
+/* General body styling */
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  
+.logo {
+    max-width: 400px;
+    max-height: 100px;
+}
+/* Centered container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+  
+/* Heading styling */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+  
+/* Card container with Flexbox */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin-top: 10vh;
+}
+  
+  /* Card styling */
+  .card {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    width: 30%;  /* Three cards per row, 30% width for each card */
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+  }
+  
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+/* Image styling */
+.card-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+  
+/* Text styling */
+.card-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #343a40;
+}
+  
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .card-container {
+      justify-content: center;
+    }
+  
+    .card {
+      width: 150px; /* Smaller card size */
+      padding: 8px;
+    }
+  
+    .card-img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .card-text {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 150px; /* Further reduce card size */
+      padding: 6px;
+    }
+  
+    .card-img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .card-text {
+      font-size: 0.8rem;
+    }
+  }
+  
