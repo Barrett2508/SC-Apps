@@ -5,101 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 300px;
+      margin: 20px auto;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .card-text {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn-ios {
+      background-color: #007aff;
+      color: white;
+    }
+
+    .btn-ios:hover {
+      background-color: #005ecb;
+    }
+
+    .btn-android {
+      background-color: #3ddc84;
+      color: white;
+    }
+
+    .btn-android:hover {
+      background-color: #31ba6f;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/StagecoachGroup.svg/1024px-StagecoachGroup.svg.png?20210621112031" alt="scg-logo">
+
     <div class="card-container">
-      <!-- App 1 -->
-      <div class="card" onclick="redirectToAppStore('greenroad')">
+
+      <!-- Card Template -->
+      <div class="card">
         <img src="https://play-lh.googleusercontent.com/nVQ-RChbbqQKxV4O-9j2ZRogew66dk_4Qyn3JD5zuGeqZTweFRlLV2XlV9Hr-jQz8SI=w480-h960-rw" class="card-img" alt="GreenRoad App">
         <p class="card-text">GreenRoad App</p>
+        <div class="btn-group">
+          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/greenroad-app/id123456789')">iOS</button>
+          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.greenroad.app')">Android</button>
+        </div>
       </div>
-      
-      <!-- App 2 -->
-      <div class="card" onclick="redirectToAppStore('blink')">
+
+      <div class="card">
         <img src="https://play-lh.googleusercontent.com/jKU1-Hcun30vb2D1Ok41yKMQ_Ex7MeDN2fxEP7eNC8S2P5mxSDPZ3Y648JZigHLor0M=s188-rw" class="card-img" alt="Blink">
         <p class="card-text">Blink</p>
+        <div class="btn-group">
+          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/blink/id987654321')">iOS</button>
+          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.blink.app')">Android</button>
+        </div>
       </div>
-      
-      <!-- App 3 -->
-      <div class="card" onclick="redirectToAppStore('dasweb')">
+
+      <div class="card">
         <img src="https://cdn.prod.website-files.com/64e65201e4305640a548a803/65034223403017d618435fb3_Das-web.webp" class="card-img" alt="DasWeb">
         <p class="card-text">DasWeb</p>
+        <div class="btn-group">
+          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/dasweb/id654321987')">iOS</button>
+          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.dasweb.app')">Android</button>
+        </div>
       </div>
-      
-      <!-- App 4 -->
-      <div class="card" onclick="redirectToAppStore('workday')">
+
+      <div class="card">
         <img src="https://play-lh.googleusercontent.com/YM9jT_ETnF1btReCKMYUwpFXBatqPKqifwehlX9_GvfEx5K7X-DANT9CBbaSQeMuxQ=w480-h960-rw" class="card-img" alt="Workday">
         <p class="card-text">Workday</p>
+        <div class="btn-group">
+          <button class="btn btn-ios" onclick="redirectTo('https://apps.apple.com/us/app/workday/id111222333')">iOS</button>
+          <button class="btn btn-android" onclick="redirectTo('https://play.google.com/store/apps/details?id=com.workday.app')">Android</button>
+        </div>
       </div>
-      
-      <!-- App 5 (placeholder with no platform-specific link) -->
-      <div class="card" onclick="redirectTo('#')">
+
+      <div class="card">
         <img src="https://play-lh.googleusercontent.com/Yt8jGBHPyBBPkqek3JkCHH02qlkTyOHwQJ9NtBLvDExHWMQW9r9JQvXSx6zDYRehdmz3=w480-h960-rw" class="card-img" alt="Hapi">
         <p class="card-text">Hapi</p>
+        <div class="btn-group">
+          <button class="btn btn-ios" onclick="alert('Coming soon on iOS')">iOS</button>
+          <button class="btn btn-android" onclick="alert('Coming soon on Android')">Android</button>
+        </div>
       </div>
-      
-      <!-- App 6 (placeholder for future feature) -->
-      <div class="card" onclick="redirectTo('#')">
+
+      <div class="card">
         <img src="https://via.placeholder.com/100" class="card-img" alt="Coming Soon">
         <p class="card-text">Coming Soon!</p>
+        <div class="btn-group">
+          <button class="btn btn-ios" onclick="alert('Feature coming soon!')">iOS</button>
+          <button class="btn btn-android" onclick="alert('Feature coming soon!')">Android</button>
+        </div>
       </div>
+
     </div>
   </div>
-  
+
   <script>
-    /**
-     * Detects the platform (iOS or Android) and redirects the user to the appropriate app store link.
-     * @param {string} appName - The identifier for the app to determine its respective links.
-     */
-    function redirectToAppStore(appName) {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-      // Links for the app based on platform
-      const appLinks = {
-        greenroad: {
-          ios: 'https://apps.apple.com/us/app/greenroad-app/id123456789',
-          android: 'https://play.google.com/store/apps/details?id=com.greenroad.app'
-        },
-        blink: {
-          ios: 'https://apps.apple.com/us/app/blink/id987654321',
-          android: 'https://play.google.com/store/apps/details?id=com.blink.app'
-        },
-        dasweb: {
-          ios: 'https://apps.apple.com/us/app/dasweb/id654321987',
-          android: 'https://play.google.com/store/apps/details?id=com.dasweb.app'
-        },
-        workday: {
-          ios: 'https://apps.apple.com/us/app/workday/id111222333',
-          android: 'https://play.google.com/store/apps/details?id=com.workday.app'
-        }
-      };
-
-      const app = appLinks[appName];
-
-      if (/android/i.test(userAgent)) {
-        // Redirect to Android link
-        window.location.href = app.android;
-      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        // Redirect to iOS link
-        window.location.href = app.ios;
-      } else {
-        // Default fallback (optional)
-        alert('Platform not detected. Please visit the app store manually.');
-      }
-    }
-
-    /**
-     * Simple redirection for non-app-specific links
-     * @param {string} url - The URL to redirect to.
-     */
     function redirectTo(url) {
-      if (url === '#') {
-        alert('This feature is coming soon!');
-      } else {
-        window.location.href = url;
-      }
+      window.location.href = url;
     }
   </script>
 </body>
